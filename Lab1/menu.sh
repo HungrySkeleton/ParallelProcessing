@@ -3,6 +3,7 @@
 # Bash Menu Script Example
 PS3="Select your option by entering in a number: "
 options_array=(Problem-1a Problem-1b Problem-1c Problem-2a Problem-2b Problem-3 Quit)
+problem1c_array=(Serial Parallel Quit)
 proc=$(nproc --all)
 
 select option in "${options_array[@]}";
@@ -25,6 +26,27 @@ do
         "Problem-1c")
             echo "Selected item $option $REPLY"
             echo "Number of Cores on this machine: ${proc}"
+            echo "Select your option by entering in a number:"
+            select option in "${problem1c_array[@]}";
+               do
+               case $option in
+               "Serial")
+               echo "Enter in the number of processors n:"
+               read n
+               echo "Selected number of processors n:${n}"
+               mpirun -n $n ./serial_p1c.out;;
+               "Parallel")
+                  echo "Enter in the number of processors n:"
+                  read n
+                  echo "Selected number of processors n:${n}"
+                  mpirun -n $n ./parallel_p1c.out;;
+               "Quit")
+               echo "We're done"
+               break;;
+               *)
+               echo "invalid option $REPLY";
+               esac
+               done
             echo "Enter in the number of processors n:"
             read n
             echo "Selected number of processors n:${n}";;
