@@ -23,7 +23,11 @@ do
            echo "Selected number of processors n:${n}"
            mpirun -n $n ./p1b.out;;
         "Problem-1c")
-           echo "Selected item $option $REPLY";;
+            echo "Selected item $option $REPLY"
+            echo "Number of Cores on this machine: ${proc}"
+            echo "Enter in the number of processors n:"
+            read n
+            echo "Selected number of processors n:${n}";;
         "Problem-2a")
             echo "Selected item $option $REPLY";;
         "Problem-2b")
