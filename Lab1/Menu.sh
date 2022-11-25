@@ -13,7 +13,7 @@ do
             echo "Enter in the number of processors n:"
             read n
             echo "Selected number of processors n:${n}"
-            mpirun -np $n ./a.out;;
+            mpirun -n $n ./p1a.out;;
         "Problem-1b")
            echo "Selected item $option $REPLY"
            proc=$(nproc --all)
@@ -21,7 +21,7 @@ do
            echo "Enter in the number of processors n:"
            read n
            echo "Selected number of processors n:${n}"
-           mpirun -np $n ./a.out;;
+           mpirun -n $n ./p1b.out;;
         "Problem-1c")
            echo "Selected item $option $REPLY";;
         "Problem-2a")
