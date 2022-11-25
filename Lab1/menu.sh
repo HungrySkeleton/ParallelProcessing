@@ -2,13 +2,14 @@
 
 # Bash Menu Script Example
 PS3="Select your option by entering in a number: "
+options_array=(Problem-1a Problem-1b Problem-1c Problem-2a Problem-2b Problem-3 Quit)
+proc=$(nproc --all)
 
-select option in Problem-1a Problem-1b Problem-1c Problem-2a Problem-2b Problem-3 Quit
+select option in "${options_array[@]}";
 do
     case $option in
         "Problem-1a")
             echo "Selected item $option $REPLY"
-            proc=$(nproc --all)
             echo "Number of Cores on this machine: ${proc}"
             echo "Enter in the number of processors n:"
             read n
@@ -16,7 +17,6 @@ do
             mpirun -n $n ./p1a.out;;
         "Problem-1b")
            echo "Selected item $option $REPLY"
-           proc=$(nproc --all)
            echo "Number of Cores on this machine: ${proc}"
            echo "Enter in the number of processors n:"
            read n
@@ -39,4 +39,3 @@ do
 done
 #Sources: https://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
 #Sources: https://www.baeldung.com/linux/shell-script-simple-select-menu#:~:text=We%20should%20use%20the%20select,of%20options%20preceded%20by%20numbers.&text=select%20repeatedly%20reads%20a%20number,NAME%20to%20the%20respective%20text.
-#mpirun -np 5 ./hello-world
