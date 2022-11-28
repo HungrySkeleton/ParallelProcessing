@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <mpi.h>
+#include<string.h>
+#include<stdio.h>
+#include<mpi.h>
 
-int main(int argc, char** argv) {
-    
+int main()
+{
     int rank = 0;
     int nproc = 1;
     int namelength;
@@ -37,4 +38,20 @@ int main(int argc, char** argv) {
 
     MPI_Finalize();
     return 0;
+
+    int nproc = 4;
+    FILE *file;
+    for(int i = 0; i < 4; i++)
+    {
+        char buffer[100]; // The filename buffer.
+        char data[32] = "Hello World!";
+        // Put "file" then k then ".txt" in to filename.
+        snprintf(buffer, sizeof(char) * 100, "Rank%iOutofProcessors%i.txt", i, nproc);
+
+        // here we get some data into variable data
+
+        file = fopen(buffer, "wb");
+        fwrite (data, 1, strlen(data) , file);
+        fclose(file);
+    }
 }
