@@ -62,7 +62,6 @@ do
         *)
            echo "invalid option $REPLY";
     esac
-    REPLY = ""
 done
 
 #Sources: https://askubuntu.com/questions/1705/how-can-i-create-a-select-menu-in-a-shell-script
