@@ -1,6 +1,6 @@
 #include <iostream>
 #ifdef HAVEMPI
-#include <mpi++.h> //Use C−version of MPI, include mpi++.h for C++ bindings.
+#include <mpi.h> //Use C−version of MPI, include mpi++.h for C++ bindings.
 #endif
 
 //Purpose: To modify problem1b.c so it's compatible compiling with gcc and mpicc for serial and parallel code

@@ -4,6 +4,7 @@
 PS3="Select your option by entering in a number: "
 options_array=(Problem-1a Problem-1b Problem-1c Problem-2a Problem-2b Problem-3 Quit)
 problem1c_array=(Serial Parallel Quit)
+problem2a_array=(Blocking Immediate Quit)
 proc=$(nproc --all)
 
 select option in "${options_array[@]}";
@@ -36,10 +37,10 @@ do
                echo "Selected number of processors n:${n}"
                mpirun -n $n ./serial_p1c.out;;
                "Parallel")
-                  echo "Enter in the number of processors n:"
-                  read n
-                  echo "Selected number of processors n:${n}"
-                  mpirun -n $n ./parallel_p1c.out;;
+               echo "Enter in the number of processors n:"
+               read n
+               echo "Selected number of processors n:${n}"
+               mpirun -n $n ./parallel_p1c.out;;
                "Quit")
                echo "We're done"
                break;;
@@ -47,13 +48,39 @@ do
                echo "invalid option $REPLY";
                esac
                done
-            echo "Enter in the number of processors n:"
-            read n
-            echo "Selected number of processors n:${n}";;
+            ;;
         "Problem-2a")
-            echo "Selected item $option $REPLY";;
+            echo "Selected item $option $REPLY"
+            echo "Number of Cores on this machine: ${proc}"
+            echo "Select your option by entering in a number:"
+            select option in "${problem2a_array[@]}";
+               do
+               case $option in
+               "Blocking")
+               echo "Enter in the number of processors n:"
+               read n
+               echo "Selected number of processors n:${n}"
+               mpirun -n $n ./p2a_blocking.out;;
+               "Immediate")
+                  echo "Enter in the number of processors n:"
+                  read n
+                  echo "Selected number of processors n:${n}"
+                  mpirun -n $n ./p2a_immediate.out;;
+               "Quit")
+               echo "We're done"
+               break;;
+               *)
+               echo "invalid option $REPLY";
+               esac
+               done
+               ;;
         "Problem-2b")
-           echo "Selected item $option $REPLY";;
+         echo "Selected item $option $REPLY"
+           echo "Number of Cores on this machine: ${proc}"
+           echo "Enter in the number of processors n:"
+           read n
+           echo "Selected number of processors n:${n}"
+           mpirun -n $n ./p2b.out;;
         "Problem-3")
            echo "Selected item $option $REPLY";;
         "Quit")

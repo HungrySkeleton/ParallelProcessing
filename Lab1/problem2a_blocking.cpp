@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 #include <mpi.h>
 
 int main(int argc, char** argv) {
@@ -18,19 +18,19 @@ int main(int argc, char** argv) {
     {
         MPI_Status status;
         char message_buffer[MPI_MAX_PROCESSOR_NAME];
-        printf("Number of processors is %d\n", nproc);
-        printf("Node %d is processor %s\n",rank, processor_name);
+        std::cout << "Number of processors is " << nproc << std::endl;
+        std::cout << "Node " << rank <<" is processor " << processor_name << std::endl;
 
         for(int irank = 1; irank < nproc; irank++)
         {
             //Receive name from processor with rank = irank - store in "message_queue"
             MPI_Recv(&message_buffer, MPI_MAX_PROCESSOR_NAME, MPI_CHAR, irank, 99, MPI_COMM_WORLD, &status);
-            printf("Node %d receiving message \"%s\" from Node %d\n", rank, message_buffer, irank);
+            std::cout << "Node " << rank << " receiving message:"  << message_buffer  << " from Node" << irank << std::endl;
         }
     }
     else
     {
-        printf("Node %d sending \"%s\" to Node %d\n", rank, processor_name, 0);
+        std::cout << "Node " << rank << " sending:"  << processor_name  << " to Node" << 0 << std::endl;
         MPI_Send (&processor_name, MPI_MAX_PROCESSOR_NAME, MPI_CHAR, 0, 99, MPI_COMM_WORLD); // Send proce ssor_n ame to processor 0.
     }
 
