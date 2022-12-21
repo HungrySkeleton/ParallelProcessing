@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 int main(int argc, char** argv) 
 {
@@ -6,7 +6,7 @@ int main(int argc, char** argv)
     int nproc = 1;
 
     // Print off a hello world message
-    printf("Hello, from processor rank %d of %d\n", rank, nproc);
+    std::cout << "Hello, from processor rank " << rank << " of " << nproc << std::endl; 
 
     return 0;
 }
