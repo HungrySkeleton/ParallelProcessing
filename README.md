@@ -8,9 +8,16 @@ The instructions to setup and run the code will be provided as part of the readm
 
 # Lab1
 1. Install OpenMPI
-2. cmake.
-3. make
-4. Execute the files using mpirun or gcc when at the appropriate part
+```
+shell$ gunzip -c openmpi-4.1.4.tar.gz | tar xf -
+shell$ cd openmpi-4.1.4
+shell$ ./configure --prefix=/usr/local
+<...lots of output...>
+shell$ make -j8 all install
+```
+3. cmake .
+4. make
+5. Execute the files using mpirun or gcc when at the appropriate part
 # Lab2
 
 ## Windows with WSL2 Setup
@@ -20,7 +27,7 @@ The instructions to setup and run the code will be provided as part of the readm
 4. Install OpenMPI
 5. Install X Server on Win10 or Win11 to Display GUI related things or comment it out in Lab2_part_3.cpp (imshow, imread, waitkey etc)
 7. Cd ParallelProcessing/Lab2
-8. cmake.
+8. cmake .
 9. make 
 10. Running the Samples ex: mpirun -np 4 p3 M_cali.jpg 1 4 out.jpg
 11. Running mpi code format ex: mpirun -np [number of processors] [program name] [Path to image to perform the image processing] [Image processing operation number 1-4] [output filename with an image extension]
@@ -31,7 +38,7 @@ The instructions to setup and run the code will be provided as part of the readm
 3. Clone Repo
 4. Run Install-OpenCV Script
 5. Install OpenMPI
-6. cmake.
+6. cmake .
 7. make 
 8. Running the Samples ex: mpirun -np 4 p3 M_cali.jpg 1 4 out.jpg
 9. Running mpi code format ex: mpirun -np [number of processors] [program name] [Path to image to perform the image processing] [Image processing operation number 1-4] [output filename with an image extension]
