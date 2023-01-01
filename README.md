@@ -7,7 +7,10 @@ cd Lab1
 The instructions to setup and run the code will be provided as part of the readme here.
 
 # Lab1
-
+1. Install OpenMPI
+2. cmake.
+3. make
+4. Execute the files using mpirun or gcc when at the appropriate part
 # Lab2
 
 ## Windows with WSL2 Setup
