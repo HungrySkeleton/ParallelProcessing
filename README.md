@@ -42,3 +42,8 @@ shell$ make -j8 all install
 7. make 
 8. Running the Samples ex: mpirun -np 4 p3 M_cali.jpg 1 4 out.jpg
 9. Running mpi code format ex: mpirun -np [number of processors] [program name] [Path to image to perform the image processing] [Image processing operation number 1-4] [output filename with an image extension]
+
+##Sources:
+Installing MPI: https://www.open-mpi.org/faq/?category=building
+Installing OpenCV: https://github.com/milq/milq/blob/master/scripts/bash/install-opencv.sh (use milq's script)
+
