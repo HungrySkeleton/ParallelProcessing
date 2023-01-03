@@ -22,10 +22,11 @@ shell$ make -j8 all install
 
 ## Windows with WSL2 Setup
 1. Install WSL2
-2. Choose your flavour of Linux Code Tested on Ubuntu (20.04 DATE:2023-01-01)
+2. Choose your flavour of Linux for WSL2 Code Tested on Ubuntu (20.04 DATE:2023-01-01)
 3. Run Install-OpenCV Script
 4. Install OpenMPI
-5. Install X Server on Win10 or Win11 to Display GUI related things or comment it out in Lab2_part_3.cpp (imshow, imread, waitkey etc)
+5. Install X Server VCSXerv on Win10 or Win11 to Display GUI related things or comment out in Lab2_part_3.cpp (imshow, imread, waitkey etc)
+6. Follow Setting up Xserv Guide
 7. Cd ParallelProcessing/Lab2
 8. cmake .
 9. make 
@@ -34,16 +35,15 @@ shell$ make -j8 all install
 
 ## Linux Tested on Ubuntu (20.04 DATE:2023-01-01)
 1. Run Install-OpenCv Script
-2. Install X
-3. Clone Repo
-4. Run Install-OpenCV Script
-5. Install OpenMPI
-6. cmake .
-7. make 
-8. Running the Samples ex: mpirun -np 4 p3 M_cali.jpg 1 4 out.jpg
-9. Running mpi code format ex: mpirun -np [number of processors] [program name] [Path to image to perform the image processing] [Image processing operation number 1-4] [output filename with an image extension]
+2. Clone Repo
+3. Install OpenMPI
+4. cmake .
+5. make 
+6. Running the Samples ex: mpirun -np 4 p3 M_cali.jpg 1 4 out.jpg
+7. Running mpi code format ex: mpirun -np [number of processors] [program name] [Path to image to perform the image processing] [Image processing operation number 1-4] [output filename with an image extension]
 
 ## Sources:
 - Installing MPI: https://www.open-mpi.org/faq/?category=building
 - Installing OpenCV: https://github.com/milq/milq/blob/master/scripts/bash/install-opencv.sh (use milq's script)
+- Setting up XServ: https://aalonso.dev/blog/how-to-use-gui-apps-in-wsl2-forwarding-x-server-cdj
 
