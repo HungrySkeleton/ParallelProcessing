@@ -32,3 +32,8 @@
 *.app
 
 **/.vscode/settings.json
+**/CMakeFiles
+Conway/p1
+Conway/CMakeCache.txt
+Conway/cmake_install.cmake
+Conway/Makefile
