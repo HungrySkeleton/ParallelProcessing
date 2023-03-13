@@ -6,7 +6,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-
+#include "Game.hpp"
 
 
 void apply_rules(cv::Mat current, cv::Mat next);
@@ -191,17 +191,21 @@ void addGlider(cv::Mat &current)
 
 int main()
 {
-    std::cout  << "Total time to perform serial image processing " << " seconds" << std::endl;
-    cv::Mat image = cv::Mat::zeros(19,19,CV_8U);
-    cv::Mat out = cv::Mat::zeros(19,19,CV_8U);
-    double low = -500.0;
-    double high = 500.0;
-    int iterations = 1;
-    //addLineTriomino(image);
-    addGlider(image);
-    //cv::randu(image, cv::Scalar(low), cv::Scalar(high));
-    cv::imwrite("./SerialImage.png", image);
+    Game g(19,19);
 
-    simulate(image, out, iterations);
+    
+    std::cout << g.area() << std::endl;
+    // std::cout  << "Total time to perform serial image processing " << " seconds" << std::endl;
+    // cv::Mat image = cv::Mat::zeros(19,19,CV_8U);
+    // cv::Mat out = cv::Mat::zeros(19,19,CV_8U);
+    // double low = -500.0;
+    // double high = 500.0;
+    // int iterations = 1;
+    // //addLineTriomino(image);
+    // addGlider(image);
+    // //cv::randu(image, cv::Scalar(low), cv::Scalar(high));
+    // cv::imwrite("./SerialImage.png", image);
+
+    // simulate(image, out, iterations);
     return 0;
 }

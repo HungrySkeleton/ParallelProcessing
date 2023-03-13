@@ -37,3 +37,4 @@ Conway/p1
 Conway/CMakeCache.txt
 Conway/cmake_install.cmake
 Conway/Makefile
+Conway/build
